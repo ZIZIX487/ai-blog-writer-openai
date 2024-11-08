@@ -6,7 +6,7 @@ import config
 openai.api_key = config.OPENAI_API_KEY
 
 
-def generateBlogTopics(prompt1):
+def generateBlogTopics('optimizing logistics with AI'):
     response = openai.Completion.create(
       engine="davinci-instruct-beta-v3",
       prompt="Generate blog topics on: {}. \n \n 1.  ".format(prompt1),
@@ -19,7 +19,7 @@ def generateBlogTopics(prompt1):
 
     return response['choices'][0]['text']
 
-def generateBlogSections(prompt1):
+def generateBlogSections('optimizing logistics with AI'):
     response = openai.Completion.create(
       engine="davinci-instruct-beta-v3",
       prompt="Expand the blog title in to high level blog sections: {} \n\n- Introduction: ".format(prompt1),
@@ -33,7 +33,7 @@ def generateBlogSections(prompt1):
     return response['choices'][0]['text']
 
 
-def blogSectionExpander(prompt1):
+def blogSectionExpander('optimizing logistics with AI'):
     response = openai.Completion.create(
       engine="davinci-instruct-beta-v3",
       prompt="Expand the blog section in to a detailed professional , witty and clever explanation.\n\n {}".format(prompt1),
